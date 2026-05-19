@@ -3,6 +3,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+export ARTIFACTS_DIR="${ARTIFACTS_DIR:-$SCRIPT_DIR/.openresearch/artifacts}"
+
 echo "uv version: $(uv --version)"
 export UV_TORCH_BACKEND=auto
 
