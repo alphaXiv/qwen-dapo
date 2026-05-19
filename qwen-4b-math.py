@@ -247,8 +247,8 @@ training_args = GRPOConfig(
     num_generations=8,
     max_prompt_length=max_prompt_length,
     max_completion_length=max_completion_length,
-    max_steps=400,
-    save_steps=100,
+    max_steps=4000,
+    save_steps=1000,
     report_to="wandb",
     output_dir=OUTPUT_DIR,
 )
