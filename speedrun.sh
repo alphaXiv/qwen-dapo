@@ -60,4 +60,11 @@ else
 fi
 echo "UNSLOTH_VLLM_STANDBY=$UNSLOTH_VLLM_STANDBY GPU_MEM_UTIL=$GPU_MEM_UTIL VLLM_USE_FLASHINFER_SAMPLER=${VLLM_USE_FLASHINFER_SAMPLER:-<unset>}"
 
+if [ -n "${WANDB_API_KEY:-}" ]; then
+  export REPORT_TO=wandb
+else
+  export REPORT_TO=none
+  echo "WANDB_API_KEY not set -> wandb logging disabled (REPORT_TO=none)"
+fi
+
 exec uv run --python 3.11 "$SCRIPT_DIR/qwen-4b-math.py" "$@"
