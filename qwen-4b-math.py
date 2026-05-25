@@ -248,8 +248,8 @@ training_args = GRPOConfig(
     num_generations=8,
     max_prompt_length=max_prompt_length,
     max_completion_length=max_completion_length,
-    max_steps=4000,
-    save_steps=1000,
+    max_steps=250,
+    save_steps=250,
     report_to=REPORT_TO,
     output_dir=OUTPUT_DIR,
 )
